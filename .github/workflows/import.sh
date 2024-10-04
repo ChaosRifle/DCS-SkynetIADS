@@ -16,9 +16,9 @@ USER_NAME="ChaosRifle"
 USER_EMAIL="ChaosBuildScript@CBS.ca"
 
 THIS_REPO="DCS-MIST"
-IMPORT_REPO_OWNER="mrSkortch"
-IMPORT_REPO="MissionScriptingTools"
-FILE="mist.lua"
+IMPORT_REPO_OWNER="walder"
+IMPORT_REPO="Skynet-IADS"
+FILE="skynet-iads-compiled.lua"
 
 UPLOAD_BRANCH_TARGET="import"
 
@@ -55,20 +55,20 @@ git clone --branch "master" "$GIT_IMPORT_REPOSITORY" "$HOME/git/import"
 GIT_THIS_REPOSITORY="git@$GIT_SERVER:$USER_NAME/$THIS_REPO.git"
 git clone --branch "dev" "$GIT_THIS_REPOSITORY" "$HOME/git/staging"
 
-rm -rf "$HOME/git/staging/$FILE"
+rm -rf "$HOME/git/staging/skynet-iads.lua"
 
-if !  test -f "$HOME/git/import/$FILE"; then
+if !  test -f "$HOME/git/import/demo-missions/$FILE"; then
   echo "ERROR: $FILE COULD NOT BE FOUND IN THE IMPORTED REPOSITORY!!!! THE SCRIPT WILL NOW TERMINATE!"
   rm -rf "$IMPORT_KEY_FILE"
   rm -rf "$HOME/.ssh"
   exit
 fi
-cp "$HOME/git/import/$FILE" "$HOME/git/staging/scripts/$FILE"
+cp "$HOME/git/import/demo-missions/$FILE" "$HOME/git/staging/scripts/$FILE"
 
 
 #mv "$HOME/git/staging" "$OUTPUT_DIR"
 cp -r "$HOME/git/staging" "$OUTPUT_DIR"
-
+mv "$OUTPUT_DIR/$FILE" "$OUTPUT_DIR/skynet-iads.lua"
 
 
 echo ===========================================================================
