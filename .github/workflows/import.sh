@@ -15,7 +15,7 @@ GIT_SERVER="github.com"
 USER_NAME="ChaosRifle"
 USER_EMAIL="ChaosBuildScript@CBS.ca"
 
-THIS_REPO="DCS-MIST"
+THIS_REPO="DCS-SkynetIADS"
 IMPORT_REPO_OWNER="walder"
 IMPORT_REPO="Skynet-IADS"
 FILE="skynet-iads-compiled.lua"
